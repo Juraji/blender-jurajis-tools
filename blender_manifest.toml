@@ -1,0 +1,21 @@
+schema_version = "1.0.0"
+
+id = "jurajis_tools"
+name = "Juraji's Tools"
+version = "0.0.1"
+tagline = "A set of tools which I use very often"
+type = "add-on"
+
+maintainer = "Juraji <github@juraji.nl>"
+tags = ["Modeling", "Object"]
+
+license = ["SPDX:GPL-2.0-or-later"]
+
+blender_version_min = "4.2.0"
+
+[build]
+paths_exclude_pattern = [
+  "/.git/",
+  "__pycache__/",
+  ".*",
+]
