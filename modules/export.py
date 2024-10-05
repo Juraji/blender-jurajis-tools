@@ -4,9 +4,8 @@ Export Tools
 import os
 import re
 import bpy
-from bpy.types import Operator, Object
+from bpy.types import Operator, Object, Panel
 
-from . import JurajisToolsPanel
 from ..functions.batch import batch_run_on_selected_objects
 from ..functions.poll import mode_is_object, selected_objects_has_selection
 
@@ -62,7 +61,11 @@ class OBJECT_OT_ExportSelected(Operator):
         return self.execute(context)
 
 
-class VIEW3D_PT_Export(JurajisToolsPanel):
+class VIEW3D_PT_Export(Panel):
+    bl_category = "Juraji's Tools"
+    bl_space_type = "VIEW_3D"
+    bl_region_type = "UI"
+    bl_context = "objectmode"
     bl_label = "Export"
 
     @classmethod

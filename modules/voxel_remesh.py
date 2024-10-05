@@ -4,8 +4,7 @@ Voxel remesh tools
 import bpy
 
 from bpy.props import PointerProperty
-from bpy.types import PropertyGroup, Object, Operator
-from . import JurajisToolsPanel
+from bpy.types import PropertyGroup, Object, Operator, Panel
 from ..functions.batch import batch_run_on_selected_objects
 from ..functions.poll import mode_is_object, selected_objects_all_is_mesh
 
@@ -54,7 +53,11 @@ class OBJECT_OT_VoxelRemesh(Operator):
         return self.execute(context)
 
 
-class VIEW3D_PT_VoxelRemesh(JurajisToolsPanel):
+class VIEW3D_PT_VoxelRemesh(Panel):
+    bl_category = "Juraji's Tools"
+    bl_space_type = "VIEW_3D"
+    bl_region_type = "UI"
+    bl_context = "objectmode"
     bl_label = "Voxel Remesh"
 
     @classmethod

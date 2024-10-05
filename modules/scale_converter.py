@@ -3,9 +3,8 @@ Scale Converter
 """
 import bpy
 from bpy.props import PointerProperty
-from bpy.types import PropertyGroup, Operator
+from bpy.types import PropertyGroup, Operator, Panel
 
-from . import JurajisToolsPanel
 from ..functions.batch import batch_run_on_selected_objects
 from ..functions.poll import mode_is_object, selected_objects_has_selection
 
@@ -68,7 +67,11 @@ class OBJECT_OT_ScaleConverter(Operator):
         return self.execute(context)
 
 
-class VIEW3D_PT_ScaleConverter(JurajisToolsPanel):
+class VIEW3D_PT_ScaleConverter(Panel):
+    bl_category = "Juraji's Tools"
+    bl_space_type = "VIEW_3D"
+    bl_region_type = "UI"
+    bl_context = "objectmode"
     bl_label = "Scale Converter"
 
     @classmethod
