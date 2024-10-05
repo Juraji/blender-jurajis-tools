@@ -1,3 +1,6 @@
+"""
+Development tool: Generate ZIP package for Blender to install
+"""
 from zipfile import ZipFile, ZIP_DEFLATED
 import os
 

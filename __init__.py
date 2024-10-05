@@ -1,3 +1,6 @@
+"""
+Add-on init
+"""
 from .modules import auto_decimate, voxel_remesh, scale_converter, export
 
 modules = [

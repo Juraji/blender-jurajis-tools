@@ -1,4 +1,9 @@
-import bpy, os, re
+"""
+Export Tools
+"""
+import os
+import re
+import bpy
 from bpy.types import Operator, Object
 
 from . import JurajisToolsPanel

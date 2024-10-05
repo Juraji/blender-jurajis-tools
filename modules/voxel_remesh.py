@@ -1,3 +1,6 @@
+"""
+Voxel remesh tools
+"""
 import bpy
 
 from bpy.props import PointerProperty

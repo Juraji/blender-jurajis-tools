@@ -1,10 +1,19 @@
-import bpy
+"""
+Batch functions
+"""
 from typing import Callable
+import bpy
 
 from bpy.types import Context, Object
 
 
 def batch_run_on_selected_objects(context: Context, op: Callable[[Object], None]):
+    """
+    Run [op] on all selected objects in the given context.
+    :param context:
+    :param op:
+    :return:
+    """
     # Copy current selection and deselect everything
     selected_objects = context.selected_objects
     bpy.ops.object.select_all(action='DESELECT')

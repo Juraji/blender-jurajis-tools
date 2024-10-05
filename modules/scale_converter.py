@@ -1,3 +1,6 @@
+"""
+Scale Converter
+"""
 import bpy
 from bpy.props import PointerProperty
 from bpy.types import PropertyGroup, Operator

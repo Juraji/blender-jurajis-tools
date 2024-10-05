@@ -1,3 +1,6 @@
+"""
+Decimation tools
+"""
 import bpy
 
 from bpy.props import PointerProperty
@@ -8,6 +11,7 @@ from ..functions.poll import mode_is_object, selected_objects_all_is_mesh
 
 
 class AutoDecimateProperties(PropertyGroup):
+
     repeat_n_times: bpy.props.IntProperty(
         name="Repeat",
         description="Number of times to repeat the decimate operation",
