@@ -15,15 +15,13 @@ class AutoDecimateProperties(PropertyGroup):
         description="Number of times to repeat the decimate operation",
         default=1,
         min=1,
-        max=10,
         step=1,
     )
     decimate_ratio: FloatProperty(
         name="Ratio",
         description="Ratio to decimate the objects",
         default=0.5,
-        min=0.1,
-        max=0.9,
+        max=1.0,
     )
 
 
