@@ -67,7 +67,7 @@ class VIEW3D_PT_VoxelRemesh(JurajisToolsPanel):
         layout.use_property_decorate = False
 
         # noinspection PyUnresolvedReferences
-        props: AutoDecimateProperties = context.scene.juraji_voxel_remesh
+        props: VoxelRemeshProperties = context.scene.juraji_voxel_remesh
 
         layout.prop(props, "voxel_size")
 

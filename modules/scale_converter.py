@@ -59,8 +59,8 @@ class OBJECT_OT_ScaleConverter(Operator):
 
         scale_perc = round(100 * scale_factor, 2)
         self.report({'INFO'}, "Scale converted successfully. "
-                              "Source: 1/{:.1f} to 1/{:.1f}, "
-                              "{:.2f}%".format(props.current_scale, props.target_scale, scale_perc))
+                              f"Source: 1/{props.current_scale:.1f} to 1/{props.target_scale:.1f}, "
+                              f"{scale_perc:.2f}%")
 
         return {"FINISHED"}
 
@@ -81,7 +81,7 @@ class VIEW3D_PT_ScaleConverter(JurajisToolsPanel):
         layout.use_property_decorate = False
 
         # noinspection PyUnresolvedReferences
-        props: AutoDecimateProperties = context.scene.juraji_scale_converter
+        props: ScaleConverterProperties = context.scene.juraji_scale_converter
 
         layout.prop(props, "current_scale")
         layout.prop(props, "target_scale")
