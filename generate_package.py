@@ -5,7 +5,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 import os
 
 if __name__ == '__main__':
-    pkg_base_name: str = "blender-jurajis-tools"
+    pkg_base_name: str = "blender_jurajis_tools"
     pkg_name: str = f"{pkg_base_name}.zip"
 
     try:
