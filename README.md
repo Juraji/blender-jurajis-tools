@@ -67,9 +67,38 @@ Ofcourse, I will always be open for discussion.
   spawn with your own defaults would be cool, I think.  
   There is a lot that this idea might require, any ideas? Let me know!
 
+## Development
+
+Blender add-ons work in a pythonic way, i.a.w. as a Python module.
+
+### Development setup
+
+You can set up a venv or any other environment manager, the [requirements.txt](requirements.txt) purely contains
+development support.
+
+### Project layout
+
+* [functions](functions): Contains various functions used by multiple modules.  
+  _No actual rules apply, other than separation by purpose._
+* [modules](modules): Contains the actual operator and accompanying UI implementation.  
+  _I've opted for each module implementing its own scene properties, operators and UI, so the add-on bootstrap can stay
+  clean of spaghetti._  
+  _This way, editing a module is would never influence any other module._
+* [__init__.py](__init__.py): This top level init is used by Blender to initialize the add-on.  
+  _Within this file one also imports the modules and registers them in Blender's api._
+* [blender_manifest.toml](blender_manifest.toml): Add-on information for Blender.
+* [generate_package.py](generate_package.py): Run this to create a zip file to install to Blender.
+
+Other files are merely project/repository support.
+
+_Make sure that, if you use an IDE that adds a project settings folder, to exclude it from the commit._
+
 ## Links
+
 Some links that you might be interested in, given you are interested in this project:
 
-* Check out my [Printables](https://www.printables.com/@RobinD_690697). I might have that one thing you need and it's free!
-* Check out my [Patreon](https://www.patreon.com/moshi_3d_clothing). Specific for DAZ users, clothing and accessories for your 3D figures!
+* Check out my [Printables](https://www.printables.com/@RobinD_690697). I might have that one thing you need and it's
+  free!
+* Check out my [Patreon](https://www.patreon.com/moshi_3d_clothing). Specific for DAZ users, clothing and accessories
+  for your 3D figures!
 * Check out my [GitHub](https://github.com/Juraji). I share stuff I create in my free time for free!
