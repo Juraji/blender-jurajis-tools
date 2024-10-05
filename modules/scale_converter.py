@@ -41,6 +41,10 @@ class OBJECT_OT_ScaleConverter(Operator):
         )
         bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
 
+    @staticmethod
+    def calculate_scale_factor(props: ScaleConverterProperties) -> float:
+        return props.current_scale / props.target_scale
+
     @classmethod
     def poll(cls, context):
         return mode_is_object(context) and selected_objects_has_selection(context)
@@ -49,14 +53,14 @@ class OBJECT_OT_ScaleConverter(Operator):
         # noinspection PyUnresolvedReferences
         props: ScaleConverterProperties = context.scene.juraji_scale_converter
 
-        scale_factor: float = props.current_scale / props.target_scale
+        scale_factor: float = self.calculate_scale_factor(props)
 
         batch_run_on_selected_objects(
             context,
             lambda o: self.scale_object(scale_factor),
         )
 
-        scale_perc = round(100 * scale_factor, 2)
+        scale_perc = 100 * scale_factor
         self.report({'INFO'}, "Scale converted successfully. "
                               f"Source: 1/{props.current_scale:.1f} to 1/{props.target_scale:.1f}, "
                               f"{scale_perc:.2f}%")
@@ -88,6 +92,9 @@ class VIEW3D_PT_ScaleConverter(Panel):
 
         layout.prop(props, "current_scale")
         layout.prop(props, "target_scale")
+
+        scale_factor: float = OBJECT_OT_ScaleConverter.calculate_scale_factor(props)
+        layout.label(text=f"Scale factor: {scale_factor:.3f}")
 
         layout.operator(operator="object.juraji_scale_converter")
 
