@@ -2,7 +2,7 @@
 Scale Converter
 """
 import bpy
-from bpy.props import PointerProperty
+from bpy.props import PointerProperty, FloatProperty
 from bpy.types import PropertyGroup, Operator, Panel
 
 from ..functions.batch import batch_run_on_selected_objects
@@ -10,14 +10,14 @@ from ..functions.poll import mode_is_object, selected_objects_has_selection
 
 
 class ScaleConverterProperties(PropertyGroup):
-    current_scale: bpy.props.FloatProperty(
+    current_scale: FloatProperty(
         name="Current scale (1:N)",
         description="The current scale, by 1 over N",
         default=1,
         min=1,
         step=1,
     )
-    target_scale: bpy.props.FloatProperty(
+    target_scale: FloatProperty(
         name="Target scale (1:N)",
         description="The target scale, by 1 over N",
         default=1,

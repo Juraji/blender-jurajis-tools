@@ -2,16 +2,15 @@
 Decimation tools
 """
 import bpy
-
-from bpy.props import PointerProperty
+from bpy.props import PointerProperty, IntProperty, FloatProperty
 from bpy.types import Object, PropertyGroup, Operator, Panel
+
 from ..functions.batch import batch_run_on_selected_objects
 from ..functions.poll import mode_is_object, selected_objects_all_is_mesh
 
 
 class AutoDecimateProperties(PropertyGroup):
-
-    repeat_n_times: bpy.props.IntProperty(
+    repeat_n_times: IntProperty(
         name="Repeat",
         description="Number of times to repeat the decimate operation",
         default=1,
@@ -19,7 +18,7 @@ class AutoDecimateProperties(PropertyGroup):
         max=10,
         step=1,
     )
-    decimate_ratio: bpy.props.FloatProperty(
+    decimate_ratio: FloatProperty(
         name="Ratio",
         description="Ratio to decimate the objects",
         default=0.5,

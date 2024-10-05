@@ -3,14 +3,14 @@ Voxel remesh tools
 """
 import bpy
 
-from bpy.props import PointerProperty
+from bpy.props import PointerProperty, FloatProperty
 from bpy.types import PropertyGroup, Object, Operator, Panel
 from ..functions.batch import batch_run_on_selected_objects
 from ..functions.poll import mode_is_object, selected_objects_all_is_mesh
 
 
 class VoxelRemeshProperties(PropertyGroup):
-    voxel_size: bpy.props.FloatProperty(
+    voxel_size: FloatProperty(
         name="Voxel Size",
         description="The voxel size to use",
         default=0.005,

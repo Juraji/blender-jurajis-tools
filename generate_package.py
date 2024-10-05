@@ -7,8 +7,13 @@ import os
 if __name__ == '__main__':
     pkg_base_name: str = "blender-jurajis-tools"
     pkg_name: str = f"{pkg_base_name}.zip"
+
+    try:
+        os.remove(pkg_name)
+    except OSError:
+        pass
+
     excludes: list[str] = [
-        "blender-jurajis-tools.zip",
         "generate_package.py",
         ".idea",
         ".git",
