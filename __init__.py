@@ -1,11 +1,10 @@
 """
 Add-on init
 """
-from .modules import auto_decimate, voxel_remesh, scale_converter, export
+from .modules import auto_decimate, scale_converter, export
 
 modules = [
     auto_decimate,
-    voxel_remesh,
     scale_converter,
     export
 ]

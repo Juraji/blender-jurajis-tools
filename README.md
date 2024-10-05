@@ -24,12 +24,6 @@ modifier is added via the UI.
 Also, I found that decimating at 0.25 would take quite a bit longer then decimating twice at 0.5. Hence, I've added the
 repeat option.
 
-### Voxel Remesh
-
-It does exactly what you think it would do. Given the voxel size, it adds a Remesh modifier and applies it to all
-selected objects.
-Again, via a script it skips the preview step so speeds up the task quite a bit.
-
 ### Scale Converter
 
 Probably the most useful option for anyone. It takes the current object scale (say 1/1) and a target scale (e.g. 1/8),
