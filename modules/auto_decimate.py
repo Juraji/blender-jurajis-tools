@@ -25,7 +25,7 @@ class AutoDecimateProperties(PropertyGroup):
     )
 
 
-class OBJECT_OT_AutoDecimate(Operator):
+class MESH_OT_AutoDecimate(Operator):
     bl_idname = "object.juraji_auto_decimate"
     bl_label = "Apply decimation"
     bl_description = "Decimate the current selected objects"
@@ -91,7 +91,7 @@ class VIEW3D_PT_AutoDecimate(Panel):
 
 
 def register():
-    bpy.utils.register_class(OBJECT_OT_AutoDecimate)
+    bpy.utils.register_class(MESH_OT_AutoDecimate)
     bpy.utils.register_class(VIEW3D_PT_AutoDecimate)
     bpy.utils.register_class(AutoDecimateProperties)
 
@@ -99,7 +99,7 @@ def register():
 
 
 def unregister():
-    bpy.utils.unregister_class(OBJECT_OT_AutoDecimate)
+    bpy.utils.unregister_class(MESH_OT_AutoDecimate)
     bpy.utils.unregister_class(VIEW3D_PT_AutoDecimate)
     bpy.utils.unregister_class(AutoDecimateProperties)
 
