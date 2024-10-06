@@ -2,7 +2,7 @@ schema_version = "1.0.0"
 
 id = "jurajis_tools"
 name = "Juraji's Tools"
-version = "0.0.1"
+version = "1.0.0"
 tagline = "A set of tools which I use very often"
 type = "add-on"
 
