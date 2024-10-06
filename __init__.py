@@ -1,12 +1,13 @@
 """
 Add-on init
 """
-from .modules import auto_decimate, scale_converter, export
+from .modules import auto_decimate, scale_converter, export, modifier_templates
 
 modules = [
     auto_decimate,
     scale_converter,
-    export
+    export,
+    modifier_templates
 ]
 
 
